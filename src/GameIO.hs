@@ -203,7 +203,7 @@ syntaxError = do
 -- welcome to the game!
 opening :: GameIO ()
 opening = do
-  lift $ putStrLn "\nWelcome to Functional Adventure!"
+  lift $ putStrLn "\nWelcome to Functional Adventure: the Silent Castle!"
   lift $ putStrLn
           "Type 'instructions' to get a list of available moves in the game.\n"
   printStory
