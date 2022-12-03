@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Silent-Castle-Adventure-Game.iml" filepath="$PROJECT_DIR$/.idea/Silent-Castle-Adventure-Game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/silent-castle-adventure.iml" filepath="$PROJECT_DIR$/.idea/silent-castle-adventure.iml" />
     </modules>
   </component>
 </project>
