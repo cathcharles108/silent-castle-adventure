@@ -1,11 +1,11 @@
 # Functional Adventure: The Silent Castle
-This is an RPG adventure game written entirely in the lovely functional language of Haskell.
+This is a text-based RPG adventure game written entirely in the lovely functional language of Haskell.
 
 ## Running the game
 
 To run this game, you will need to have a way to configure Haskell. Since my professor used `stack`, I recommend doing it as well.
 
-If you already have `stack` on your machine, go ahead and clone this repository, then run the following:
+If you already have `stack` on your machine, go ahead and clone this repository, then run the following on your terminal:
 
     $ stack build
 
