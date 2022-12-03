@@ -9,7 +9,6 @@ import Direction
 import Room
 import Player
 import GameState
-import Example
 
 isCarryingAnythingTest :: TestTree
 isCarryingAnythingTest =
