@@ -1,0 +1,80 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           silent-castle-adventure
+version:        0.1.0.0
+description:    silent-castle-adventure
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      Command
+      Direction
+      Example
+      GameIO
+      GameState
+      Item
+      Player
+      Room
+      Tasks
+  other-modules:
+      Paths_silent_castle_adventure
+  hs-source-dirs:
+      src
+  default-extensions:
+      InstanceSigs
+      NamedFieldPuns
+  ghc-options: -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , mtl
+    , parsec
+    , random
+  default-language: Haskell2010
+
+executable silent-castle-adventure-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_silent_castle_adventure
+  hs-source-dirs:
+      app
+  default-extensions:
+      InstanceSigs
+      NamedFieldPuns
+  ghc-options: -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , mtl
+    , parsec
+    , random
+    , silent-castle-adventure
+  default-language: Haskell2010
+
+test-suite silent-castle-adventure-test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  other-modules:
+      Paths_silent_castle_adventure
+  hs-source-dirs:
+      test
+  default-extensions:
+      InstanceSigs
+      NamedFieldPuns
+  ghc-options: -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , mtl
+    , parsec
+    , random
+    , silent-castle-adventure
+    , tasty
+    , tasty-hunit
+  default-language: Haskell2010
