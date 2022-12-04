@@ -409,6 +409,10 @@ thingGone thing st =
 takeScrollCheck :: GameState -> Bool
 takeScrollCheck st = TakeScroll `elem` (alreadyDone st)
 
+-- has the player revealed the door
+revealDoorCheck :: GameState -> Bool
+revealDoorCheck st = RevealDoor `elem` (alreadyDone st)
+
 -- unlock task to be accomplished
 unlockTasks :: TaskName -> GameState -> GameState
 unlockTasks task st = GameState (message st)

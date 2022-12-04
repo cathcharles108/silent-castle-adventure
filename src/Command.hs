@@ -27,6 +27,7 @@ data Command
   | Todo
   | Paint Direction
   | ReadScroll
+  | ShowMap
   deriving (Eq, Show)
 
 type Conjunction = [Command]
@@ -105,7 +106,7 @@ moveP = do
   pure (Move dir)
 
 instructionsP :: Parser Command
-instructionsP = pure Instructions <* string "instructions"
+instructionsP = pure Instructions <* string "help"
 
 storyP :: Parser Command
 storyP = pure Story <* string "story"
@@ -121,10 +122,13 @@ paintP = do
 readScrollP :: Parser Command
 readScrollP = pure ReadScroll <* string "scroll"
 
+showMapP :: Parser Command
+showMapP = pure ShowMap <* string "map"
+
 -- assignment 7 2.0.5
 commandP :: Parser Command
 commandP = choice [inventoryP, lookP, takeP, dropP, paintP, readScrollP,
-                  moveP, instructionsP, storyP, todoP, exitP]
+                  moveP, instructionsP, storyP, todoP, showMapP, exitP]
 
 -- assignment 7 2.0.6
 conjunctionP :: Parser Conjunction

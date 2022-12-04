@@ -125,8 +125,9 @@ printInstructions = do
                              "the direction of the area. For instance, type " ++
                              "'paint east' to paint the eastern wall.")
     False -> pure ()
+  lift $ putStrLn "Type 'map' to show the areas of the castle."
   lift $ putStrLn "Type 'exit' or 'quit' to quit the game."
-  lift $ putStrLn "Type 'instructions' to pull up this instructions list again."
+  lift $ putStrLn "Type 'help' to pull up this instructions list again."
 
 printStory :: GameIO ()
 printStory = do
@@ -147,6 +148,33 @@ printTodoList = do
       lift . putStrLn . foldl (\acc task -> acc <> "\n" <> show task)
                               "Your to-do list:"
                               $ tasks
+
+showMap :: String
+showMap =
+  ("    Tower\n" ++
+   "      |\n" ++
+   "Royal library\n" ++
+   "      |\n" ++
+   "  Great Hall -- Throne room\n" ++
+   "      |\n" ++
+   "Royal bedroom")
+
+showMapUnlocked :: String
+showMapUnlocked =
+  ("                              Tower\n" ++
+   "                                |\n" ++
+   "                         Royal library\n" ++
+   "                                |\n" ++
+   "Outside -- Royal garden -- Great Hall -- Throne room\n" ++
+   "                                |\n" ++
+   "                         Royal bedroom")
+
+printMap :: GameIO ()
+printMap = do
+  state <- get
+  case (revealDoorCheck state) of
+    True -> lift $ putStrLn showMapUnlocked
+    False -> lift $ putStrLn showMap
 
 -- assignment 8 2.0.3
 -- implements the function as inputted
@@ -205,7 +233,7 @@ opening :: GameIO ()
 opening = do
   lift $ putStrLn "\nWelcome to Functional Adventure: the Silent Castle!"
   lift $ putStrLn
-          "Type 'instructions' to get a list of available moves in the game.\n"
+          "Type 'help' to get a list of available moves in the game.\n"
   printStory
   lift $ putStrLn "\nFeeling dazed, you decide to go up to the tower."
   lift $ putStrLn "Maybe seeing your kingdom through the telescope will help."
@@ -230,6 +258,7 @@ performCommand cmd = do
       put $ paintDoor dir state
       printMessage
     ReadScroll -> printScroll
+    ShowMap -> printMap
     Exit -> exit
 
 -- assignment 8 2.0.10
@@ -239,7 +268,7 @@ performConjunction cmds = do
   state <- get
   case cmds of
     [] -> pure ()
-    (x : xs) -> performCommand x >> performConjunction xs
+    (x : xs) -> performCommand x >> todoChecker >> performConjunction xs
 
 -- assignment 8 2.0.11
 -- parses the string and runs the commands listed
@@ -260,4 +289,3 @@ repl = do
   str <- lift getLine
   parseConjunction str
   checkGameOver
-  todoChecker
