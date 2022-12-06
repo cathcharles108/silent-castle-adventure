@@ -3,7 +3,9 @@ This is a text-based RPG adventure game written entirely in the lovely functiona
 
 ## Running the game
 
-To run this game, you will need to have a way to configure Haskell. Since my professor used `stack`, I recommend doing it as well.
+If you are on a Windows 10 device, you can (potentially) run this game by simply downloading the `silent-castle-adventure-exe.exe` file, instead of the whole repo.
+
+Otherwise, to run this game, you will need to have a way to configure Haskell. Since my professor used `stack`, I recommend doing it as well.
 
 If you already have `stack` on your machine, go ahead and clone this repository, then run the following on your terminal:
 
