@@ -117,6 +117,7 @@ printInstructions = do
                   "For instance, type 'drop goblet' to put the goblet down.")
   lift $ putStrLn ("Type '<direction>' to move through room exits. " ++
                   "For instance, type 'east' to go through the eastern exit.")
+  lift $ putStrLn ("Type 'inventory' to check your current inventory.")
   case (takeScrollCheck state) of
     True -> lift $ putStrLn "Type 'scroll' to read the scroll again."
     False -> pure ()
