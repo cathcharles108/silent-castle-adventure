@@ -196,8 +196,9 @@ finishGame :: GameIO ()
 finishGame = do
   lift $ putStrLn
     ("You made it outside! Time to figure out what happened to everyone." ++
-    "\nCongratulations! You have won the game!")
-  lift exitSuccess
+    "\nCongratulations! You have won the game!" ++
+    "\nType 'exit' or 'quit' to quit the game.")
+--  lift exitSuccess
 
 -- assignment 8 2.0.5
 -- quits the game when the user wants to go instead of winning
