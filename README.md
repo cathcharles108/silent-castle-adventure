@@ -1,6 +1,17 @@
 # Functional Adventure: The Silent Castle
 This is a text-based RPG adventure game written entirely in the lovely functional language of Haskell.
 
+## Note to players
+
+If you are running the `.exe` version of this, if you win the game, the program exits itself abruptly. This is due to how the exit system works.
+If you are running this in your shell, it will print the exit message before exiting the game environment.
+
+SPOILER ALERT: If you would like to read my documentation of this game, which details implemented features beyond what was required in the original specification of this assignment and a game walkthrough, find it in `Documentation.md`.
+Note that this personal Silent Castle version of the game is further extended from the original project, and thus the documentation might not detail every single aspect of the game. I will add items to the documentation in the future.
+As much as I would like to, however, I am quite sure it is against the University's honor code for me to actually post the full specifications of this project, so you will have to make do with what I wrote in addition to that.
+Keep that in mind as you are reading the documentation, but if you understand Haskell, the code will be clear enough.
+In the future I will detail what the modules do for easy reading and navigation.
+
 ## Running the game
 
 If you are on a Windows 10 device, you can (potentially) run this game by simply downloading the `silent-castle-adventure-exe.exe` file, instead of the whole repo.

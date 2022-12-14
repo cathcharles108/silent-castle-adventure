@@ -427,7 +427,7 @@ completeTasksHelper task st = GameState (message st)
                                         (gmap st)
                                         (universe st)
                                         (removeTask task (player st))
-                                        ([task] ++ (alreadyDone st))
+                                        (task : alreadyDone st)
                                         (hiddenTasks st)
 
 -- helper function to create new state when the scroll is picked up

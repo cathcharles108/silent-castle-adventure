@@ -177,7 +177,6 @@ printMap = do
     True -> lift $ putStrLn showMapUnlocked
     False -> lift $ putStrLn showMap
 
--- assignment 8 2.0.3
 -- implements the function as inputted
 actionOverList :: (ItemName -> GameState -> GameState) ->
                   [ItemName] -> GameIO ()
@@ -190,7 +189,6 @@ actionOverList func things = do
       printMessage
       actionOverList func xs
 
--- assignment 8 2.0.4
 -- print success message
 finishGame :: GameIO ()
 finishGame = do
@@ -198,9 +196,8 @@ finishGame = do
     ("You made it outside! Time to figure out what happened to everyone." ++
     "\nCongratulations! You have won the game!" ++
     "\nType 'exit' or 'quit' to quit the game.")
---  lift exitSuccess
+  lift exitSuccess
 
--- assignment 8 2.0.5
 -- quits the game when the user wants to go instead of winning
 exit :: GameIO ()
 exit = do
